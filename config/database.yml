@@ -1,0 +1,26 @@
+# Default database configuration
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+# Development environment database
+development:
+  <<: *default
+  database: contacts_development1
+  username: postgres
+  password: root
+
+# Test environment database
+test:
+  <<: *default
+  database: contacts_test
+  username: postgres
+  password: root
+
+# Production environment database
+production:
+  <<: *default
+  database: contacts
+  username: postgres
+  password: root
